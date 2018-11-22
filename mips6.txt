@@ -1,0 +1,16 @@
+x = 32;
+y = 32;
+radius = 15;
+
+for(int i = 0; i < 7; i++){
+  rainbow(x, y, radius, colour[i]);
+  radius--;
+}
+
+void rainbow(int xc, int yc, int radius, int colour){
+  for(double y = 32 - radius; y < 32; y += 0.01){
+    double x = sqrt(radius*radius - (y-32)^2);
+    setcolor(x,y,colour);
+    setcolor(64-x,y,colour);
+  }
+}
